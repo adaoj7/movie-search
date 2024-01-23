@@ -3,14 +3,6 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <h1>Vite</h1>
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <h1>Vue</h1>
-    </a>
-  </div>
   <HelloWorld msg="Vite + Vue" />
 </template>
 

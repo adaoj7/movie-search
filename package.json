@@ -4,11 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "nodemon webservice/app.js -w webservice/app.js -w webapp",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "env": "^0.0.2",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "vite-express": "^0.14.0",
     "vue": "^3.3.11"
   },
   "devDependencies": {
