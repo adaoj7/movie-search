@@ -1,13 +1,22 @@
 <script setup>
 import { ref } from 'vue'
+import axios from 'axios';
 
 defineProps({
   msg: String,
 })
 
-const movie = ref('')
-const handleSubmit = () => {
-  console.log(movie)
+let movie = ref('')
+let movieListData = ref()
+const handleSubmit = async () => {
+  try {
+    movieListData = await axios.get('/api/getMovies', movie)
+    console.log('hitting endpoint')
+    console.log(movieListData)
+  } catch (error){
+    console.log(error)
+  }
+
 }
 </script>
 
@@ -19,6 +28,7 @@ const handleSubmit = () => {
     <input v-model="movie" placeholder="Please enter a movie">
     <button type="submit">Search</button>
   </form>
+  <div v-if="movieListData">{{ movieListData }}</div>
 
   
 </template>
