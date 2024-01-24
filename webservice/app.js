@@ -34,11 +34,17 @@ app.get('/api/getMovies', async (req,res) => {
             }
         })
         const movies = response.data.results.slice(0,10)
-        console.log(movies)
-    //    for (let i = 0; i <= movies.length; i++){
-    //     console.log(movies[i].title)
-    //    }
-        res.json(movies)
+        let movieArr = []
+       for (let i = 0; i <= movies.length-1; i++){
+        
+        movieArr.push({
+            title:movies[i].title,
+            poster: "https://image.tmdb.org/t/p/w500"+movies[i].poster_path,
+            popularity: movies[i].popularity
+
+        })
+       }
+        res.json(movieArr)
     } catch (error) {
         console.log(error)
     }

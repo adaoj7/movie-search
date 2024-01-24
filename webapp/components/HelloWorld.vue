@@ -11,9 +11,8 @@ let movie = ref('')
 let movieListData = ref()
 const handleSubmit = async () => {
   try {
-    console.log(movie)
-    movieListData.value.data = await axios.get('/api/getMovies', {params:{movie: movie.value}})
-    console.log(movieListData.value)
+    movieListData.value = await axios.get('/api/getMovies', {params:{movie: movie.value}})
+    movieListData.value = movieListData.value.data
   } catch (error){
     console.log(error)
   }
@@ -28,7 +27,7 @@ const handleSubmit = async () => {
     <input v-model="movie" placeholder="Please enter a movie">
     <button type="submit">Search</button>
   </form>
-  <MovieData v-if="movieListData" movieListData="movieListData"/>
+  <MovieData v-if="movieListData" :movieListData="movieListData"/>
 
   
 </template>
