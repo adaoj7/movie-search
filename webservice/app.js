@@ -15,10 +15,15 @@ app.use(express.json())
 
 
 app.get('/api/getMovies', async (req,res) => {
+    // const movie = req.query.movie
     try {
-        const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
+        const movie = req.query.movie
+        if (!movie) {
+            return res.status(400).send('No movie query provided');
+        }
+        console.log(movie)
+        const response = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${req.query.movie}`, {
             params: {
-                query: req,
                 include_adult: false,
                 language: 'en-US',
                 page: 1
@@ -28,9 +33,12 @@ app.get('/api/getMovies', async (req,res) => {
                 Authorization: `Bearer ${process.env.API_READ_ACCESS_TOKEN}`
             }
         })
-        const movies = response.data.results.filter()
+        const movies = response.data.results.slice(0,10)
         console.log(movies)
-        res.json(response.data.results)
+    //    for (let i = 0; i <= movies.length; i++){
+    //     console.log(movies[i].title)
+    //    }
+        res.json(movies)
     } catch (error) {
         console.log(error)
     }
