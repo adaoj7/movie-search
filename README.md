@@ -1,7 +1,10 @@
-# Vue 3 + Vite
+This project was built using Vue.js.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+First clone down the project and install dependencies.
+Server runs on 'npm run dev' which will serve up both front and back-end code
 
-## Recommended IDE Setup
+It would be cool to incorporate a way to save movies that you would like to watch back to the database using the api keys and authentication. Also more advanced searching and filter features could be incorporated if people would like to watch movies from a specific era.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Honestly, the API is quite large and there is a lot of versatility to it to be able to manage your movie lists and search for new movies.
+
+Overall, this was a fun challenge with a framework that I had not worked extensively with before. I am most comfortable with React, but Vue has some nice features that made it relatively simple to work with. 

@@ -10,9 +10,9 @@ defineProps({
 <template>
     <ul>
         <li v-for="object in movieListData">
-            <p>{{ object.title }}</p>
+            <p>Movie Title: {{ object.title }}</p>
             <img :src="object.poster" alt="">
-            <p>{{ object.popularity }}</p>
+            <p>Popularity Score: {{ object.popularity }}</p>
         </li>
     </ul>
 </template>
