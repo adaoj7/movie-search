@@ -18,7 +18,7 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form @submit.prevent="handleSubmit" class="search-bar">
     <h1>Adam's Movie Lookup</h1>
     <p>This app will display 10 movies using The Movie Database API</p>
     <input v-model="movie" placeholder="Please enter a movie title">
@@ -30,5 +30,8 @@ const handleSubmit = async () => {
 </template>
 
 <style scoped>
-
+  .search-form {
+    display: flex;
+    align-items: start;
+  }
 </style>
